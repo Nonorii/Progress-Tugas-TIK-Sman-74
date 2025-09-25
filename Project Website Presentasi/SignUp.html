@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ByeByeBB SignUp</title>
+    <style>
+    /* Reset and base */
+        *, *::before, *::after {
+        box-sizing: border-box;
+        }
+
+        body, html {
+        margin: 0;
+        height: 100%;
+        font-family: 'Arial Black', Arial, sans-serif;
+        background: #0f1419; /* dark background */
+        overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+        }
+
+        /* Background slider */
+        .background-slider {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        z-index: 0;
+        }
+
+        .background-slider .image-track {
+        display: flex;
+        width: max-content;
+        animation: slideBackground 60s linear infinite;
+        }
+
+        .background-slider .bg-image {
+        border-radius: 15px;
+        margin: 8px;
+        overflow: hidden;
+        flex-shrink: 0;
+        width: 180px;
+        height: 110px;
+        box-shadow: 0 0 12px rgb(0 0 0 / 0.6);
+        background-color: #111c2b;
+        }
+
+        .background-slider .bg-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: brightness(0.8);
+        transition: filter 0.3s ease;
+        user-select: none;
+        pointer-events: none;
+        }
+
+        .background-slider .bg-image:hover img {
+        filter: brightness(1);
+        }
+
+        @keyframes slideBackground {
+        0%   { transform: translateX(0); }
+        100% { transform: translateX(-50%); }
+        }
+
+        .login-form {
+    position: relative;
+    z-index: 1;
+    background-color: rgba(47, 54, 63, 0.4); 
+    backdrop-filter: blur(5px);
+    border-radius: 18px;
+    padding: 32px 40px;
+    max-width: 360px;
+    width: 100%;
+    box-shadow:
+        0 0 12px rgb(0 0 0 / 0.5),
+        inset 0 0 25px rgb(0 0 0 / 0.35);
+    color: white;
+    text-align: center;
+}
+
+        .login-form .logo {
+        font-family: 'Arial Black', Arial, sans-serif;
+        font-weight: 900;
+        font-size: 2.8rem;
+        letter-spacing: 0.12em;
+        color: white;
+        margin-bottom: 14px;
+        user-select: none;
+        }
+
+        .login-form .logo svg {
+        width: 18px;
+        height: 18px;
+        vertical-align: middle;
+        margin-left: 6px;
+        margin-bottom: 1px;
+        fill: white;
+        }
+
+        .login-form .subtitle {
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+        color: #ddd;
+        user-select: none;
+        }
+
+        /* Birthday */
+        .birthday {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 16px;
+        }
+
+        .birthday select {
+        flex: 1;
+        background: #232730;
+        border: none;
+        border-radius: 6px;
+        color: white;
+        padding: 8px 10px;
+        font-size: 0.85rem;
+        appearance: none;
+        cursor: pointer;
+        box-shadow: inset 0 0 5px rgb(0 0 0 / 0.3);
+        transition: background-color 0.3s ease;
+        }
+
+        .birthday select:hover,
+        .birthday select:focus {
+        background: #2a2e36;
+        outline: none;
+        }
+
+        /* Input fields */
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+        width: 100%;
+        background: #232730;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        padding: 12px 14px;
+        font-size: 0.9rem;
+        margin-bottom: 16px;
+        box-shadow: inset 0 0 6px rgb(0 0 0 / 0.3);
+        transition: background-color 0.3s ease;
+        }
+
+        .login-form input::placeholder {
+        color: #646c79;
+        }
+
+        .login-form input:focus {
+        background: #2a2e36;
+        outline: none;
+        }
+
+        /* Gender */
+        .gender-container {
+        margin-bottom: 13px;
+        }
+
+        .gender-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+        user-select: none;
+        color: #bbb;
+        display: block;
+        text-align: left;
+        }
+
+        .gender-options {
+        display: flex;
+        border: 1.5px solid #3a3f4a;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #232730;
+        user-select: none;
+        }
+
+        .gender-options button {
+        flex: 1;
+        background: transparent;
+        border: none;
+        padding: 10px 0;
+        font-size: 0.9rem;
+        color: #888;
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+        }
+
+        .gender-options button svg {
+        width: 18px;
+        height: 18px;
+        fill: #888;
+        }
+
+        .gender-options button.selected {
+        background: #4a8dff;
+        color: white;
+        }
+
+        .gender-options button.selected svg {
+        fill: white;
+        }
+
+        .gender-options button + button {
+        border-left: 1.5px solid #3a3f4a;
+        }
+
+        .gender-options button:focus {
+        outline: none;
+        box-shadow: 0 0 8px #4a8dffaa;
+        }
+
+        /* Terms */
+        .terms {
+        font-size: 0.7rem;
+        color: #999;
+        margin-bottom: 18px;
+        line-height: 1.3;
+        user-select: none;
+        }
+
+        .terms a {
+        color: #4a8dff;
+        text-decoration: none;
+        transition: color 0.25s ease;
+        cursor: pointer;
+        }
+
+        .terms a:hover,
+        .terms a:focus {
+        text-decoration: underline;
+        outline: none;
+        }
+
+        /* Submit button */
+        .signup-btn {
+        background-color: white;
+        color: #181818;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 12px 0;
+        width: 100%;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        user-select: none;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        box-shadow: 0 3px 4px rgb(0 0 0 / 0.2);
+        }
+
+        .signup-btn:hover,
+        .signup-btn:focus {
+        background-color: #4a8dff;
+        color: white;
+        outline: none;
+        box-shadow: 0 3px 8px #4a8dff;
+        }
+
+        /* Log In button */
+        .log-in-btn {
+        position: fixed;
+        top: 18px;
+        right: 18px;
+        background-color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 9px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        cursor: pointer;
+        z-index: 3;
+        user-select: none;
+        box-shadow: 0 3px 5px rgb(0 0 0 / 0.3);
+        transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .log-in-btn:hover,
+        .log-in-btn:focus {
+        background-color: #4a8dff;
+        color: white;
+        outline: none;
+        box-shadow: 0 3px 10px #4a8dff;
+        }
+
+        /* Responsive */
+        .table-container {
+            margin: 30px auto;
+            padding: 15px;
+            max-width: 900px;
+            overflow-x: auto; /* kalau layar kecil, bisa scroll */
+        }
+        
+        #datatable {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            background: rgba(27, 31, 37, 0.4); /* transparan gelap */
+            backdrop-filter: blur(10px);       /* efek kaca buram */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        }
+        
+        #datatable th, 
+        #datatable td {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 10px;
+            text-align: left;
+            font-size: 0.9rem;
+            color: #fff;
+            white-space: normal;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 150px; /* biar rapih */
+        }
+        
+        #datatable th {
+            background: rgba(42, 47, 58, 0.6);
+            font-weight: 700;
+            text-align: center;
+            backdrop-filter: blur(6px);
+        }
+        
+        #datatable tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        #datatable tr:hover {
+            background: rgba(74, 141, 255, 0.25);
+        }
+        
+        @media (max-width: 400px) {
+        .background-slider .bg-image {
+            width: 140px;
+            height: 85px;
+            margin: 6px;
+        }
+
+        .login-form {
+            padding: 24px 28px;
+        }
+
+        .login-form .logo {
+            font-size: 2.3rem;
+        }
+
+        .birthday select {
+            font-size: 0.8rem;
+            padding: 7px 9px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <button class="log-in-btn" type="button" aria-label="Log in to account">Log In</button>
+
+    <div class="container" role="main" aria-label="Roblox sign up form with animated background images">
+        <!-- Background slider -->
+        <div class="background-slider" aria-hidden="true">
+        <div class="image-track" aria-hidden="true">
+            <!-- Background images -->
+            <div class="bg-image">
+            <img src="img/image1.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image2.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image3.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image4.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image5.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image6.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image7.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image8.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image9.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image10.jpg" alt="Ambatunatt" />
+            </div>
+            <!-- Duplicate for loop animation -->
+            <div class="bg-image">
+            <img src="img/image1.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image2.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image3.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image4.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image5.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image6.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image7.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image8.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image9.jpg" alt="Ambatunatt" />
+            </div>
+            <div class="bg-image">
+            <img src="img/image10.jpg" alt="Ambatunatt" />
+            </div>
+        </div>
+        </div>
+
+        <!-- Sign Up form -->
+        <form class="login-form" aria-label="Sign up form">
+        <div class="logo" aria-hidden="true">
+            ByeByeBB
+        </div>
+
+        <div class="subtitle">Sign Up untuk Membeli Produk Kami!</div>
+
+        <!-- Birthday -->
+        <div class="birthday" role="group" aria-labelledby="birthday-label">
+        <label id="birthday-label" class="gender-label" style="display:none;">Birthday</label>
+        <select aria-label="Select birth month" name="birth-month" required>
+            <option value="" disabled selected>Bulan</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+
+        <select aria-label="Select birth day" name="birth-day" required>
+            <option value="" disabled selected>Hari</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="27">27</option>
+            <option value="28">28</option>
+            <option value="29">29</option>
+            <option value="30">30</option>
+            <option value="31">31</option>
+        </select>
+
+        <select aria-label="Select birth year" name="birth-year" required>
+            <option value="" disabled selected>Tahun</option>
+            <script>
+                const yearSelect = document.currentScript.parentElement;
+                for (let year = 2015; year >= 1940; year--) {
+                yearSelect.insertAdjacentHTML('beforeend', `<option value="${year}">${year}</option>`);
+                }
+            </script>
+        </select>
+    </div>
+
+        <!-- Username -->
+        <input
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Masukan Nama Anda"
+            autocomplete="username"
+            spellcheck="false"
+            minlength="3"
+            maxlength="16"
+            required
+            aria-describedby="username-help"
+        />
+        <small id="username-help" style="display:none;">Choose a username between 3 and 16 characters</small>
+
+        <!-- Password -->
+        <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Minimal 8 Karakter"
+            minlength="8"
+            required
+            autocomplete="new-password"
+        />
+
+        <!-- Gender -->
+        <div class="gender-container">
+            <label class="gender-label" id="gender-label">Gender (optional)</label>
+            <div class="gender-options" role="radiogroup" aria-labelledby="gender-label">
+            <button
+                type="button"
+                role="radio"
+                aria-checked="false"
+                aria-label="Select gender male"
+                tabindex="0"
+                data-value="male"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M14 2h4v4h-2l3.7 3.7-1.4 1.4L15.6 7.4V9h-2V2zM8 8a6 6 0 1112 0 6 6 0 01-12 0zm6 0l-3 4 1.5 1.5L14 9l-2-1z" />
+                </svg>
+                Male
+            </button>
+            <button
+                type="button"
+                role="radio"
+                aria-checked="false"
+                aria-label="Select gender female"
+                tabindex="-1"
+                data-value="female"
+            >
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="M12 2a6 6 0 110 12 6 6 0 010-12zm0 18v-4a5 5 0 100-10 5 5 0 000 10v4h2v2h-4v-2h2z" />
+                </svg>
+                Female
+            </button>
+            </div>
+        </div>
+
+        <!-- Terms -->
+        <div class="terms" role="note">
+            Jika kamu ingin SignUp, Kamu harus menyetujui semua
+            <a href="#" tabindex="0" rel="noopener noreferrer">Cara Penggunaan</a>
+            termasuk peraturan atau ketentuan tertulis bahwa kamu telah menyetujui
+            <a href="#" tabindex="0" rel="noopener noreferrer">Kebijakan Privasi</a>.
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="signup-btn" aria-label="Sign up for Roblox account">Sign Up</button>
+        </form>
+    </div>
+
+    <div class="table-container">
+        <table id="datatable">
+            <thead>
+                <tr>
+                    <th>Bulan</th>
+                    <th>Hari</th>
+                    <th>Tahun</th>
+                    <th>Nama</th>
+                    <th>Password</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+        
+    const form = document.querySelector(".login-form");
+    const tableBody = document.getElementById("datatable").querySelector("tbody");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); 
+
+        const bulan = form.querySelector('[name="birth-month"]').value;
+        const hari = form.querySelector('[name="birth-day"]').value;
+        const tahun = form.querySelector('[name="birth-year"]').value;
+        const nama = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        const selectedGenderBtn = form.querySelector('.gender-options button.selected');
+        const gender = selectedGenderBtn ? selectedGenderBtn.dataset.value : "-";
+
+        const newRow = tableBody.insertRow();
+        newRow.insertCell(0).textContent = bulan;
+        newRow.insertCell(1).textContent = hari;
+        newRow.insertCell(2).textContent = tahun;
+        newRow.insertCell(3).textContent = nama;
+        newRow.insertCell(4).textContent = password;
+        newRow.insertCell(5).textContent = gender;
+
+        form.reset();
+
+        form.querySelectorAll('.gender-options button').forEach(btn => {
+            btn.classList.remove('selected');
+            btn.setAttribute('aria-checked', 'false');
+            btn.setAttribute('tabindex', '-1');
+        });
+
+        alert("Data berhasil ditambahkan ke tabel!");
+    });
+
+        // Gender button toggle
+        (function () {
+        const genderButtons = document.querySelectorAll('.gender-options button');
+        let selectedGender = null;
+
+        function updateSelection(target) {
+            genderButtons.forEach(btn => {
+            if (btn === target) {
+                btn.classList.add('selected');
+                btn.setAttribute('aria-checked', 'true');
+                btn.setAttribute('tabindex', '0');
+                selectedGender = btn.dataset.value;
+            } else {
+                btn.classList.remove('selected');
+                btn.setAttribute('aria-checked', 'false');
+                btn.setAttribute('tabindex', '-1');
+            }
+            });
+        }
+
+        genderButtons.forEach(btn => {
+            btn.addEventListener('click', () => updateSelection(btn));
+            btn.addEventListener('keydown', e => {
+            if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                let idx = Array.from(genderButtons).indexOf(document.activeElement);
+                if (e.key === 'ArrowRight') {
+                idx = (idx + 1) % genderButtons.length;
+                } else {
+                idx = (idx - 1 + genderButtons.length) % genderButtons.length;
+                }
+                genderButtons[idx].focus();
+                updateSelection(genderButtons[idx]);
+            }
+            });
+        });
+        })();
+
+        // Prevent native form submit
+        document.querySelector('.login-form').addEventListener('submit', e => {
+        e.preventDefault();
+        alert('Sign Up form submitted!');
+        });
+    </script>
+    </body>
+    </html>

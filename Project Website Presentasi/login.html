@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ByeByeBB</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet">
+
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        :root {
+            --primary: #b6895b;
+            --bg: #010101;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: #fff;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Main Container */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        /* Background Slider (Konsep dari Roblox) */
+        .background-slider {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+            filter: blur(4px) brightness(0.6); /* Sedikit blur dan gelap agar form menonjol */
+        }
+
+        .background-slider .image-track {
+            display: flex;
+            width: max-content;
+            animation: slideBackground 80s linear infinite;
+        }
+
+        .background-slider .bg-image {
+            border-radius: 15px;
+            margin: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+            width: 300px; /* Disesuaikan agar terlihat lebih baik */
+            height: 200px;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
+            background-color: #111c2b;
+        }
+
+        .background-slider .bg-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes slideBackground {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        /* Login Form */
+        .login-form {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(1, 1, 1, 0.75); /* Menggunakan warna --bg dengan transparansi */
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 2.5rem 3rem;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.5), inset 0 0 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid #513c28; /* Border dari style navbar asli */
+            text-align: center;
+        }
+        
+        /* Logo (Style dari navbar) */
+        .login-form .navbar-logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #fff;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-form .navbar-logo span {
+            color: var(--primary);
+        }
+
+        .login-form .subtitle {
+            font-size: 1rem;
+            font-weight: 300;
+            color: #ddd;
+            margin-bottom: 2rem;
+        }
+
+        /* Input Group (Style dari contact form) */
+        .login-form .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            background-color: rgba(255, 255, 255, 0.05); /* Latar belakang input sedikit transparan */
+            border: 1px solid #513c28;
+            border-radius: 8px;
+            padding-left: 1.5rem;
+            transition: 0.3s;
+        }
+        
+        .login-form .input-group:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 8px rgba(182, 137, 91, 0.5);
+        }
+
+        .login-form .input-group i {
+            color: var(--primary);
+        }
+
+        .login-form .input-group input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            background: none;
+            color: #fff;
+        }
+
+        .login-form .input-group input::placeholder {
+            color: #aaa;
+        }
+
+        /* Tombol Login (Style dari .btn) */
+        .login-form .btn {
+            margin-top: 1rem;
+            width: 100%;
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+            background-color: var(--primary);
+            cursor: pointer;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .login-form .btn:hover {
+            background-color: #fff;
+            color: var(--primary);
+        }
+        
+        /* Link di bawah form */
+        .form-footer {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .form-footer a {
+            color: var(--primary);
+            transition: 0.3s;
+        }
+
+        .form-footer a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 450px) {
+            html {
+                font-size: 85%;
+            }
+            .login-form {
+                padding: 2rem 1.5rem;
+            }
+            .background-slider .bg-image {
+                width: 200px;
+                height: 130px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" role="main">
+        <div class="background-slider" aria-hidden="true">
+            <div class="image-track">
+                <div class="bg-image">
+                    <img src="img/perfume1.jpg" alt="Elegant perfume bottle on dark background">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume2.jpg" alt="Perfume bottle with floral elements">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume3.jpg" alt="Modern minimalist perfume bottle">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume4.jpg" alt="Luxury perfume packaging">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume5.jpg" alt="Perfume bottle with citrus accents">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume6.jpg" alt="Vintage style perfume bottle">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume7.jpg" alt="Perfume ad with water splashes">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume1.jpg" alt="Elegant perfume bottle on dark background">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume2.jpg" alt="Perfume bottle with floral elements">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume3.jpg" alt="Modern minimalist perfume bottle">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume4.jpg" alt="Luxury perfume packaging">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume5.jpg" alt="Perfume bottle with citrus accents">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume6.jpg" alt="Vintage style perfume bottle">
+                </div>
+                <div class="bg-image">
+                    <img src="img/perfume7.jpg" alt="Perfume ad with water splashes">
+                </div>
+            </div>
+        </div>
+
+        <form action="" class="login-form">
+            <a href="#" class="navbar-logo">ByeBye<span>BB</span>.</a>
+            <p class="subtitle">Welcome back! Please log in to your account.</p>
+
+            <div class="input-group">
+                <i data-feather="user"></i>
+                <input type="text" placeholder="Username or Email" required>
+            </div>
+
+            <div class="input-group">
+                <i data-feather="lock"></i>
+                <input type="password" placeholder="Password" required>
+            </div>
+
+            <button type="submit" class="btn">Log In</button>
+
+            <div class="form-footer">
+                <p>Don't have an account? <a href="#">Sign Up</a></p>
+            </div>
+        </form>
+
+    </div>
+
+    <script>
+        feather.replace();
+    </script>
+
+</body>
+</html>
