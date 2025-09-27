@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kisah Merek - ByeBye BB Luxury Parfum</title>
+    <meta name="description" content="Temukan filosofi dan warisan ByeBye BB - di mana kemewahan bertemu pemberdayaan melalui wewangian premium yang dirancang untuk kepercayaan diri dan kesuksesan." />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fbyebyebb6265back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+</head>
+<body class="bg-background text-text-primary overflow-x-hidden">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-secondary-800">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <svg class="w-10 h-10 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                        <path d="M20 2L25 12H35L27 18L30 28L20 22L10 28L13 18L5 12H15L20 2Z"/>
+                        <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                    </svg>
+                    <span class="text-2xl font-playfair font-bold text-primary">ByeBye BB</span>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="brand_story.html" class="text-primary font-medium border-b-2 border-primary pb-1">Kisah Merek</a>
+                    <a href="signature_collections.html" class="text-text-secondary hover:text-primary transition-fast">Koleksi</a>
+                    <a href="featured_products.html" class="text-text-secondary hover:text-primary transition-fast">Produk</a>
+                    <a href="customer_testimonials.html" class="text-text-secondary hover:text-primary transition-fast">Testimoni</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button onclick="openSearch()" class="text-text-secondary hover:text-primary transition-fast">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </button>
+                    <button onclick="openCart()" class="text-text-secondary hover:text-primary transition-fast relative">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l2.5 5m6-5v6a2 2 0 01-2 2H9a2 2 0 01-2-2v-6m8 0V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4.01"/>
+                        </svg>
+                        <span class="absolute -top-2 -right-2 bg-primary text-background text-xs rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                    </button>
+                    
+                    <button class="md:hidden text-text-secondary hover:text-primary transition-fast" onclick="toggleMobileMenu()">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-secondary-800">
+                <div class="flex flex-col space-y-4 pt-4">
+                    <a href="brand_story.html" class="text-primary font-medium">Kisah Merek</a>
+                    <a href="signature_collections.html" class="text-text-secondary hover:text-primary transition-fast">Koleksi</a>
+                    <a href="featured_products.html" class="text-text-secondary hover:text-primary transition-fast">Produk</a>
+                    <a href="customer_testimonials.html" class="text-text-secondary hover:text-primary transition-fast">Testimoni</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Botol parfum mewah dalam pengaturan yang elegan" class="w-full h-full object-cover" onerror="this.src='https://images.pexels.com/photos/1190829/pexels-photo-1190829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+            <div class="absolute inset-0 bg-background/70"></div>
+        </div>
+
+        <div class="relative z-10 text-center max-w-4xl mx-auto px-6">
+            <h1 class="text-hero font-playfair font-bold mb-6" data-aos="fade-up" data-aos-duration="800">
+                Mengapa Harus Pilih <span class="text-primary">ByeBye BB</span>
+            </h1>
+            <p class="text-xl text-text-secondary mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Kami telah meracik semua produk kami dengan baik, Diterima oleh banyak kalangan, dan tentunya Dengan Harga yang Terjangkau. Membuat produk kami harus menjadi pilihan yang Pertama
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="400">
+                <button class="bg-primary text-background px-8 py-3 rounded-lg font-semibold hover:bg-primary-600 transition-normal">
+                    Temukan Filosofi di Balik Ini
+                </button>
+                <button class="border border-primary text-primary px-8 py-3 rounded-lg font-semibold hover:bg-primary hover:text-background transition-normal">
+                    Cerita di Balik Semua Ini
+                </button>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+            </svg>
+        </div>
+    </section>
+
+    <section class="py-20 bg-surface">
+        <div class="container mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="slide-right" data-aos-duration="600">
+                    <h2 class="text-display font-playfair font-bold mb-6">
+                        Aroma adalah <span class="text-primary">Pelindung</span>
+                    </h2>
+                    <p class="text-lg text-text-secondary mb-6 leading-relaxed">
+                        ByeBye BB adalah representasi dari menghilangkan Bau Badan. Mulai dari aroma yang lembut, sampai aroma yang tercium berani, namun tidak menyengat. Byebye BB diracik dengan bahan premium dengan ciri khas unik yang tidak bisa ditemukan dimana mana.
+                    </p>
+                    <p class="text-lg text-text-secondary mb-8 leading-relaxed">
+                        Nama "ByeBye BB" menyiratkan perpisahan dengan rasa tidak nyaman sambil merangkul diri Anda yang berani dan cantik. Kami menempati wilayah emosional antara kemewahan dan pemberdayaan, menciptakan wewangian bagi individu yang memandang wewangian sebagai perpanjangan dari merek pribadi dan kisah sukses mereka.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-primary mb-2">Kekuatan Transformatif</h4>
+                                <p class="text-text-secondary">Setiap aroma dirancang untuk meningkatkan kepercayaan diri dan menandai kemenangan pribadi</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-primary mb-2">Pelindung Yang Kuat</h4>
+                                <p class="text-text-secondary">Keharuman sebagai baju zirah - perlindungan dan kekuatan untuk pertempuran sehari-hari Anda.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-2 h-2 bg-primary rounded-full mt-3 flex-shrink-0"></div>
+                            <div>
+                                <h4 class="font-semibold text-primary mb-2">Warisan yang Mewah</h4>
+                                <p class="text-text-secondary">Menggunakan bahan yang premium - sehingga tidak dapat ditemukan di produk lain</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="slide-left" data-aos-duration="600">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1594736797933-d0401ba2fe65?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Botol parfum elegan dengan aksen emas" class="w-full h-96 object-cover rounded-lg shadow-hover" onerror="this.src='https:/images.pexels.com/photos/1190829/pexels-photo-1190829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/50 to-transparent rounded-lg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-display font-playfair font-bold mb-6">
+                    Seni <span class="text-primary">Kerajinan</span>
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Di balik setiap botol terdapat perjalanan penemuan, gairah, dan perhatian yang cermat terhadap detail. Ahli parfum kami menjelajahi dunia untuk menemukan bahan-bahan terbaik.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-background" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Bahan Langka</h3>
+                    <p class="text-text-secondary">Bahan diambil di Negara yang terkenal dengan hasil alamnya yang langka dan tidak dapat ditemukan ditempat lain</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-background" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Formula Rahasia</h3>
+                    <p class="text-text-secondary">Perlu berbulan bulan untuk meracik parfum kami, dengan bahan dan formula khusus demi menghasilkan hasil yang maksimal dan dengan ciri khas tersendiri.</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-10 h-10 text-background" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A3,3 0 0,1 15,5V11A3,3 0 0,1 12,14A3,3 0 0,1 9,11V5A3,3 0 0,1 12,2M19,11C19,14.53 16.39,17.44 13,17.93V21H11V17.93C7.61,17.44 5,14.53 5,11H7A5,5 0 0,0 12,16A5,5 0 0,0 17,11H19Z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Kualitas Terbaik</h3>
+                    <p class="text-text-secondary">Setiap batch menjalani pengujian ketat untuk keawetan, proyeksi, dan dampak emosional sebelum mencapai pelanggan kami yang cerdas.</p>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="zoom-in" data-aos-duration="800">
+                <img src="https://images.unsplash.com/photo-1615634260167-c8cdede054de?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ahli parfum membuat wewangian di laboratorium" class="w-full h-96 object-cover rounded-lg shadow-hover" onerror="this.src='https://images.pixabay.com/photo/2017/08/06/12/52/essential-oils-2589779_1280.jpg'; this.onerror=null;" />
+                <div class="absolute inset-0 bg-gradient-to-r from-background/70 to-transparent rounded-lg flex items-center">
+                    <div class="p-12">
+                        <h3 class="text-2xl font-playfair font-bold mb-4">Di Mana Keajaiban Terjadi</h3>
+                        <p class="text-text-secondary max-w-md">Di dalam laboratorium kami, semua itu terjadi, sebuah racikan atau formula unik, menghasilkan ciri khas yang tidak dapat ditemukan ditempat lain. Hal itu membuat kami menyebutnya sebagai Keajaiban</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-surface">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-display font-playfair font-bold mb-6">
+                    Bahan <span class="text-primary">Khas</span>
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Temukan bahan-bahan langka dan berharga yang menjadikan wewangian kami istimewa. Setiap komponen dipilih dengan cermat berdasarkan khasiat dan dampak emosionalnya yang unik.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 items-center mb-16">
+                <div class="space-y-8" data-aos="slide-right" data-aos-duration="600">
+                    <div class="bg-background p-6 rounded-lg shadow-subtle border border-secondary-800">
+                        <div class="flex items-start space-x-4">
+                            <img src="https://images.unsplash.com/photo-1609205807107-e8ec2120f9de?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Kelopak Mawar Bulgaria" class="w-16 h-16 object-cover rounded-lg flex-shrink-0" onerror="this.src='https://images.pixabay.com/photo/2016/12/19/08/39/rose-1917675_1280.jpg'; this.onerror=null;" />
+                            <div>
+                                <h4 class="text-xl font-playfair font-bold text-primary mb-2">Mawar Bulgaria</h4>
+                                <p class="text-text-secondary mb-3">Dipanen saat fajar di Lembah Mawar, bahan berharga ini membutuhkan 3.000 kelopak hanya untuk satu gram minyak.</p>
+                                <span class="text-sm text-accent">Nada Tengah • Kepercayaan Diri • Keanggunan</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-background p-6 rounded-lg shadow-subtle border border-secondary-800">
+                        <div class="flex items-start space-x-4">
+                            <img src="https://images.unsplash.com/photo-1609205807107-e8ec2120f9de?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Serpihan kayu Gaharu" class="w-16 h-16 object-cover rounded-lg flex-shrink-0" onerror="this.src='https://images.pexels.com/photos/4226881/pexels-photo-4226881.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                            <div>
+                                <h4 class="text-xl font-playfair font-bold text-primary mb-2">Gaharu Kamboja</h4>
+                                <p class="text-text-secondary mb-3">Dikenal sebagai 'emas cair', resin langka ini berkembang selama puluhan tahun, menciptakan nada dasar yang memabukkan dan kuat.</p>
+                                <span class="text-sm text-accent">Nada Dasar • Kekuatan • Misteri</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-background p-6 rounded-lg shadow-subtle border border-secondary-800">
+                        <div class="flex items-start space-x-4">
+                            <img src="https://images.unsplash.com/photo-1609205807107-e8ec2120f9de?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Jeruk Bergamot" class="w-16 h-16 object-cover rounded-lg flex-shrink-0" onerror="this.src='https://images.pixabay.com/photo/2017/08/06/12/52/essential-oils-2589779_1280.jpg'; this.onerror=null;" />
+                            <div>
+                                <h4 class="text-xl font-playfair font-bold text-primary mb-2">Bergamot Calabria</h4>
+                                <p class="text-text-secondary mb-3">Dipetik langsung dari kebun-kebun kuno, jeruk ini memberikan aroma pembuka yang membangkitkan semangat dan memberi energi yang memicu kepercayaan diri.</p>
+                                <span class="text-sm text-accent">Nada Atas • Energi • Optimisme</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="slide-left" data-aos-duration="600">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Sumber bahan berkelanjutan di alam" class="w-full h-96 object-cover rounded-lg shadow-hover" onerror="this.src='https://images.pexels.com/photos/1190829/pexels-photo-1190829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-background/70 to-transparent rounded-lg flex items-end">
+                            <div class="p-8">
+                                <h3 class="text-2xl font-playfair font-bold mb-4 text-primary">Sumber yang Etis</h3>
+                                <p class="text-text-secondary">Kami bermitra langsung dengan para petani dan komunitas, memastikan praktik perdagangan yang adil dan metode panen berkelanjutan yang melindungi sumber daya berharga planet kita.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-display font-playfair font-bold mb-6">
+                    Ilmu <span class="text-primary">Aroma</span>
+                </h2>
+                <p class="text-xl text-text-secondary max-w-3xl mx-auto">
+                    Memahami psikologi di balik wewangian membantu kami menciptakan aroma yang tidak hanya harum—tetapi juga mengubah perasaan Anda dan cara orang lain memandang Anda.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-background" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6Z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-playfair font-bold mb-3">Pemicu Memori</h4>
+                    <p class="text-text-secondary text-sm">Aroma terhubung langsung ke sistem limbik, menciptakan memori dan asosiasi emosional yang kuat.</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-background" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2C13.1,2 14,2.9 14,4C14,5.1 13.1,6 12,6C10.9,6 10,5.1 10,4C10,2.9 10.9,2 12,2M21,9V7L15,1H5C3.89,1 3,1.89 3,3V21A2,2 0 0,0 5,23H19A2,2 0 0,0 21,21V9M19,9H14V4H5V19H19V9Z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-playfair font-bold mb-3">Peningkat Kepercayaan Diri</h4>
+                    <p class="text-text-secondary text-sm">Studi menunjukkan bahwa mengenakan wewangian khas meningkatkan kepercayaan diri hingga 40%.</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-background" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2A2,2 0 0,1 14,4C14,4.74 13.6,5.39 13,5.73V7H14A7,7 0 0,1 21,14H22A1,1 0 0,1 23,15V18A1,1 0 0,1 22,19H21V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V19H2A1,1 0 0,1 1,18V15A1,1 0 0,1 2,14H3A7,7 0 0,1 10,7H11V5.73C10.4,5.39 10,4.74 10,4A2,2 0 0,1 12,2Z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-playfair font-bold mb-3">Dampak Sosial</h4>
+                    <p class="text-text-secondary text-sm">Wewangian memengaruhi kesan pertama dan dapat membuat Anda lebih berkesan dalam interaksi sosial.</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-background" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12,2L13.09,8.26L20,9L13.09,9.74L12,16L10.91,9.74L4,9L10.91,8.26L12,2Z"/>
+                        </svg>
+                    </div>
+                    <h4 class="text-lg font-playfair font-bold mb-3">Peningkat Suasana Hati</h4>
+                    <p class="text-text-secondary text-sm">Molekul aroma tertentu dapat memicu pelepasan endorfin, yang secara alami meningkatkan suasana hati Anda.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gradient-to-r from-primary/10 to-accent/10">
+        <div class="container mx-auto px-6 text-center">
+            <div data-aos="fade-up" data-aos-duration="800">
+                <h2 class="text-display font-playfair font-bold mb-6">
+                    Siap Mengubah <span class="text-primary">Kepercayaan Diri</span> Anda?
+                </h2>
+                <p class="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
+                    Temukan aroma khas Anda dan bergabunglah dengan ribuan orang yang telah menemukan kepercayaan diri mereka melalui kekuatan wewangian premium.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="signature_collections.html" class="bg-primary text-background px-8 py-4 rounded-lg font-semibold hover:bg-primary-600 transition-normal inline-block">
+                        Jelajahi Koleksi
+                    </a>
+                    <a href="featured_products.html" class="border border-primary text-primary px-8 py-4 rounded-lg font-semibold hover:bg-primary hover:text-background transition-normal inline-block">
+                        Belanja Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-surface py-16 border-t border-secondary-800">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-6">
+                        <svg class="w-8 h-8 text-primary" viewBox="0 0 40 40" fill="currentColor">
+                            <path d="M20 2L25 12H35L27 18L30 28L20 22L10 28L13 18L5 12H15L20 2Z"/>
+                            <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                        </svg>
+                        <span class="text-xl font-playfair font-bold text-primary">ByeBye BB</span>
+                    </div>
+                    <p class="text-text-secondary mb-4">Rumah parfum mewah yang menciptakan kepercayaan diri melalui wewangian premium.</p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-text-secondary hover:text-primary transition-fast">
+                        </a>
+                        <a href="javascript:void(0)" class="text-text-secondary hover:text-primary transition-fast">
+                        </a>
+                        <a href="javascript:void(0)" class="text-text-secondary hover:text-primary transition-fast">
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-4">Tautan Cepat</h4>
+                    <ul class="space-y-2">
+                        <li><a href="brand_story.html" class="text-text-secondary hover:text-primary transition-fast">Kisah Merek</a></li>
+                        <li><a href="signature_collections.html" class="text-text-secondary hover:text-primary transition-fast">Koleksi</a></li>
+                        <li><a href="featured_products.html" class="text-text-secondary hover:text-primary transition-fast">Produk</a></li>
+                        <li><a href="customer_testimonials.html" class="text-text-secondary hover:text-primary transition-fast">Testimoni</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-4">Layanan Pelanggan</h4>
+                    <ul class="space-y-2">
+                        <li><a href="javascript:void(0)" class="text-text-secondary hover:text-primary transition-fast">Hubungi Kami</a></li>
+                        <li><a href="javascript:void(0)" class="text-text-secondary hover:text-primary transition-fast">Info Pengiriman</a></li>
+                        <li><a href="javascript:void(0)" class="text-text-secondary hover:text-primary transition-fast">Pengembalian</a></li>
+                        <li><a href="javascript:void(0)" class="text-text-secondary hover:text-primary transition-fast">Panduan Ukuran</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-playfair font-bold text-lg mb-4">Tetap Terhubung</h4>
+                    <p class="text-text-secondary mb-4">Berlangganan untuk peluncuran eksklusif dan tips kepercayaan diri.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Email Anda" class="flex-1 bg-background border border-secondary-700 rounded-l-lg px-4 py-2 text-text-primary focus:outline-none focus:border-primary" />
+                        <button class="bg-primary text-background px-4 py-2 rounded-r-lg hover:bg-primary-600 transition-fast">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-secondary-800 pt-8 text-center">
+                <p class="text-text-secondary">© 2025 ByeBye BB Luxury Parfum. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="searchOverlay" class="fixed inset-0 bg-background/95 backdrop-blur-md z-50 hidden">
+        <div class="container mx-auto px-6 py-20">
+            <div class="max-w-2xl mx-auto">
+                <div class="flex items-center justify-between mb-8">
+                    <h2 class="text-2xl font-playfair font-bold">Cari</h2>
+                    <button onclick="closeSearch()" class="text-text-secondary hover:text-primary transition-fast">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="relative">
+                    <input type="text" placeholder="Cari wewangian, koleksi..." class="w-full bg-surface border border-secondary-700 rounded-lg px-6 py-4 text-lg text-text-primary focus:outline-none focus:border-primary" />
+                    <svg class="absolute right-6 top-1/2 transform -translate-y-1/2 w-6 h-6 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cartModal" class="fixed inset-0 bg-background/95 backdrop-blur-md z-50 hidden">
+        <div class="container mx-auto px-6 py-20">
+            <div class="max-w-md mx-auto bg-surface rounded-lg shadow-modal">
+                <div class="flex items-center justify-between p-6 border-b border-secondary-800">
+                    <h2 class="text-xl font-playfair font-bold">Keranjang Belanja</h2>
+                    <button onclick="closeCart()" class="text-text-secondary hover:text-primary transition-fast">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4 mb-6">
+                        <div class="flex items-center space-x-4">
+                            <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?q=80&w=100&auto=format&fit=crop" alt="Produk" class="w-16 h-16 object-cover rounded" />
+                            <div class="flex-1">
+                                <h4 class="font-semibold">Ramuan Percaya Diri</h4>
+                                <p class="text-text-secondary text-sm">50ml</p>
+                                <p class="text-primary font-semibold">Rp 2.500.000</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-secondary-800 pt-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="font-semibold">Total:</span>
+                            <span class="text-xl font-bold text-primary">Rp 2.500.000</span>
+                        </div>
+                        <button class="w-full bg-primary text-background py-3 rounded-lg font-semibold hover:bg-primary-600 transition-normal">
+                            Lanjut ke Pembayaran
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 600,
+            easing: 'ease-out',
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Search overlay functions
+        function openSearch() {
+            document.getElementById('searchOverlay').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSearch() {
+            document.getElementById('searchOverlay').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cart modal functions
+        function openCart() {
+            document.getElementById('cartModal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            document.getElementById('cartModal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modals on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeSearch();
+                closeCart();
+            }
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', function() {
+            const scrolled = window.pageYOffset;
+            const parallax = document.querySelector('.hero-bg');
+            if (parallax) {
+                const speed = scrolled * 0.5;
+                parallax.style.transform = `translateY(${speed}px)`;
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
